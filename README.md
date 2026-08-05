@@ -20,6 +20,26 @@ A static website for Meaningful Ideas, featuring Non-Coercive, Collaborative Par
 - **Typography**: Lora (serif) for headings, Nunito (sans-serif) for body
 - **Fully responsive** with mobile navigation
 - **Accessible** with semantic HTML and ARIA labels
+- **Animations**: Scroll-reveal effects, floating elements, gradient shifts, shimmer buttons, and interactive card hovers
+- **Navbar**: Sticky with backdrop blur, scroll shrink effect, and animated mobile hamburger menu
+- **Parallax**: Subtle parallax on the quote section (desktop only)
+- **Reduced motion**: Respects `prefers-reduced-motion` accessibility setting
+
+## Testing
+
+The site uses Playwright for end-to-end testing across desktop (1440×900) and mobile (390×844) viewports.
+
+Run tests:
+```
+npm test
+```
+
+Tests verify:
+- All 13 pages load without JS errors
+- No horizontal overflow on mobile
+- Mobile menu toggle works correctly
+- Course CTAs link to the correct enrollment pages
+- All key sections render on each page
 
 ## Deployment
 

@@ -1,0 +1,11 @@
+{
+  "name": "meaningfulideas",
+  "version": "1.0.0",
+  "description": "Meaningful Ideas — Conscious Parenting Website",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  }
+}
