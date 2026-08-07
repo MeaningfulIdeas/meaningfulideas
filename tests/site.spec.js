@@ -1,6 +1,7 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 const path = require('path');
+const fs = require('fs');
 
 const basePath = path.resolve(__dirname, '..');
 const pages = [
@@ -93,6 +94,20 @@ test.describe('Navigation', () => {
 });
 
 test.describe('Page content verification', () => {
+  test('homepage preserves UTF-8 branding and attribution', async () => {
+    const html = fs.readFileSync(path.join(basePath, 'index.html'), 'utf8');
+    expect(html).toContain('🌿');
+    expect(html).toContain('🌱');
+    expect(html).toContain('Non-Coercive, Collaborative Parenting by Vivek Patel');
+    expect(html).not.toMatch(/ðŸ|â€”|Â©/);
+  });
+
+  test('clean URL pages exist', () => {
+    for (const page of ['blog', 'courses', 'contact', 'membership', 'privacy', 'terms']) {
+      expect(fs.existsSync(path.join(basePath, page, 'index.html'))).toBe(true);
+    }
+  });
+
   test('homepage has key sections', async ({ page: p }) => {
     await p.goto(fileUrl('index.html'), { waitUntil: 'load' });
     await expect(p.locator('.hero')).toBeVisible();

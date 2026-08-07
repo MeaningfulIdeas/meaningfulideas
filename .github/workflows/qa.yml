@@ -1,0 +1,36 @@
+name: Website QA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  qa:
+    name: Inspect website before deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser QA
+        run: npm test
+
+      - name: Check whitespace and encoding regressions
+        shell: bash
+        run: |
+          git diff --check
+          ! grep -R -n -E 'ðŸ|â€”|Â©' --include='*.html' .
