@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/courses/meaningful-ideas-membership",
+      "destination": "/membership/",
+      "permanent": true
+    }
+  ]
+}

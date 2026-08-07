@@ -49,4 +49,5 @@ This is a static site — simply deploy the contents to any static hosting servi
 
 - Free Course: https://meaningfulideas.newzenler.com/fp/guiding-without-controlling-free-course
 - Paid Course: https://meaningfulideas.newzenler.com/courses/maximum-change/
-- Membership: https://www.meaningfulideas.com/courses/meaningful-ideas-membership
+- Membership sales page: https://www.meaningfulideas.com/membership/
+- Legacy Membership URL: https://www.meaningfulideas.com/courses/meaningful-ideas-membership (permanently redirects to the sales page)
