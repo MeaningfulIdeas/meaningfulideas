@@ -34,3 +34,18 @@ jobs:
         run: |
           git diff --check
           ! grep -R -n -E 'ðŸ|â€”|Â©' --include='*.html' .
+
+      - name: Check approved external destinations
+        shell: bash
+        run: |
+          for url in \
+            "https://meaningfulideas.newzenler.com/fp/guiding-without-controlling-free-course" \
+            "https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership" \
+            "https://meaningfulideas.newzenler.com/support" \
+            "https://meaningfulideas.newzenler.com/login" \
+            "https://meaningfulideas.newzenler.com/blog/i-wish-i-was-nicer" \
+            "https://meaningfulideas.newzenler.com/blog/coercive-influence-decreases-over-time-relational-influence-increases-over-time" \
+            "https://meaningfulideas.newzenler.com/blog/let-our-guidance-feel-good-to-our-children" \
+            "https://meaningfulideas.ca"; do
+            curl --fail --silent --show-error --location --head --max-time 30 "$url" >/dev/null
+          done

@@ -57,7 +57,7 @@ test.describe('Navigation', () => {
     const nav = p.locator('.nav');
     await expect(nav).toBeVisible();
     const links = p.locator('.nav-links a');
-    await expect(links).toHaveCount(6);
+    await expect(links).toHaveCount(8);
   });
 
   test('nav collapses on mobile and toggle works', async ({ page: p }) => {
@@ -134,6 +134,15 @@ test.describe('Page content verification', () => {
     const cards = p.locator('.blog-card');
     await expect(cards).toHaveCount(3);
   });
+
+  test('membership page has the approved pricing tiers', async ({ page: p }) => {
+    await p.goto(fileUrl('membership.html'), { waitUntil: 'load' });
+    await expect(p.locator('.pricing-card')).toHaveCount(3);
+    await expect(p.locator('body')).toContainText('$25');
+    await expect(p.locator('body')).toContainText('$35');
+    await expect(p.locator('body')).toContainText('$50');
+    await expect(p.locator('body')).not.toContainText('MINCCPEG');
+  });
 });
 
 test.describe('Mobile responsiveness', () => {
@@ -167,9 +176,11 @@ test.describe('Mobile responsiveness', () => {
 
     // Verify all nav links are accessible
     const linkTexts = await p.locator('.nav-links a').allInnerTexts();
-    expect(linkTexts.length).toBe(6);
+    expect(linkTexts.length).toBe(8);
     expect(linkTexts).toContain('Home');
     expect(linkTexts).toContain('Free Course');
+    expect(linkTexts).toContain('NCCP Merch');
+    expect(linkTexts).toContain('Sign In');
   });
 });
 
@@ -186,5 +197,11 @@ test.describe('External links', () => {
     const cta = p.locator('a[href*="maximum-change"]').first();
     const href = await cta.getAttribute('href');
     expect(href).toContain('meaningfulideas.newzenler.com');
+  });
+
+  test('membership CTA has correct NZ destination', async ({ page: p }) => {
+    await p.goto(fileUrl('membership.html'), { waitUntil: 'load' });
+    const href = await p.locator('a[href*="meaningful-ideas-membership"]').first().getAttribute('href');
+    expect(href).toBe('https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership');
   });
 });
