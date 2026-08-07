@@ -201,7 +201,7 @@ test.describe('External links', () => {
 
   test('membership CTA has correct NZ destination', async ({ page: p }) => {
     await p.goto(fileUrl('membership.html'), { waitUntil: 'load' });
-    const href = await p.locator('a[href*="meaningful-ideas-membership"]').first().getAttribute('href');
+    const href = await p.locator('.hero-actions a[href*="meaningful-ideas-membership"]').first().getAttribute('href');
     expect(href).toBe('https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership');
   });
 });
