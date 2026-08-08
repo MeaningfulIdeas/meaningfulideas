@@ -143,6 +143,16 @@ test.describe('Page content verification', () => {
     await expect(p.locator('body')).toContainText('$50');
     await expect(p.locator('body')).not.toContainText('MINCCPEG');
   });
+
+  test('membership pricing buttons use the correct checkout plans', async ({ page: p }) => {
+    await p.goto(fileUrl('membership.html'), { waitUntil: 'load' });
+    const pricingLinks = await p.locator('.pricing-card a').evaluateAll(links => links.map(link => link.href));
+    expect(pricingLinks).toEqual([
+      'https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership/buy/plan/113429',
+      'https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership/buy/plan/155636',
+      'https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership/buy/plan/161862',
+    ]);
+  });
 });
 
 test.describe('Mobile responsiveness', () => {
