@@ -117,6 +117,13 @@ test.describe('Page content verification', () => {
     await expect(p.locator('.disclaimer')).toBeVisible();
   });
 
+  test('homepage membership card opens the internal sales page', async ({ page: p }) => {
+    await p.goto(fileUrl('index.html'), { waitUntil: 'load' });
+    const membershipCard = p.locator('.course-card').filter({ hasText: 'Parenting Membership Group' });
+    await expect(membershipCard).toHaveCount(1);
+    await expect(membershipCard.locator('a', { hasText: 'Learn More' })).toHaveAttribute('href', 'membership/');
+  });
+
   test('courses page has pricing', async ({ page: p }) => {
     await p.goto(fileUrl('courses.html'), { waitUntil: 'load' });
     await expect(p.locator('.pricing-card')).toBeVisible();
