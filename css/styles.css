@@ -1330,17 +1330,29 @@ img {
    typography can be reviewed before applying it everywhere.
    ============================================ */
 @media (max-width: 600px) {
-  .home-readability-preview .hero p.lead,
-  .home-readability-preview .section-heading p,
-  .home-readability-preview .card p,
-  .home-readability-preview .course-card-body p {
+  .home-readability-preview h1,
+  .home-readability-preview h2,
+  .home-readability-preview h3,
+  .home-readability-preview h4,
+  .home-readability-preview h5,
+  .home-readability-preview h6,
+  .home-readability-preview p {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .home-readability-preview p {
+    font-size: 1.5rem;
     color: #171717;
-    font-size: 1.2rem;
     line-height: 1.75;
   }
 
-  .home-readability-preview .hero p.lead {
-    font-size: 1.35rem;
+  .home-readability-preview .cta-banner p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .home-readability-preview .footer p {
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 
