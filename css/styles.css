@@ -1325,33 +1325,36 @@ img {
 }
 
 /* ============================================
-   HOMEPAGE MOBILE READABILITY PREVIEW
-   Scoped temporarily to index.html so the site-wide
-   typography can be reviewed before applying it everywhere.
+   MOBILE READABILITY
+   Consistent, high-contrast typography across the site.
    ============================================ */
 @media (max-width: 600px) {
-  .home-readability-preview h1,
-  .home-readability-preview h2,
-  .home-readability-preview h3,
-  .home-readability-preview h4,
-  .home-readability-preview h5,
-  .home-readability-preview h6,
-  .home-readability-preview p {
+  body {
+    --text-light: #171717;
+    color: #171717;
+  }
+
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6 {
     font-size: 2rem;
     line-height: 1.4;
   }
 
-  .home-readability-preview p {
+  body p {
     font-size: 1.5rem;
     color: #171717;
     line-height: 1.2;
   }
 
-  .home-readability-preview .cta-banner p {
+  body .cta-banner p {
     color: rgba(255, 255, 255, 0.9);
   }
 
-  .home-readability-preview .footer p {
+  body .footer p {
     color: rgba(255, 255, 255, 0.8);
   }
 }
