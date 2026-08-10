@@ -1325,6 +1325,26 @@ img {
 }
 
 /* ============================================
+   HOMEPAGE MOBILE READABILITY PREVIEW
+   Scoped temporarily to index.html so the site-wide
+   typography can be reviewed before applying it everywhere.
+   ============================================ */
+@media (max-width: 600px) {
+  .home-readability-preview .hero p.lead,
+  .home-readability-preview .section-heading p,
+  .home-readability-preview .card p,
+  .home-readability-preview .course-card-body p {
+    color: #171717;
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .home-readability-preview .hero p.lead {
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================================
    REDUCED MOTION PREFERENCE
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
