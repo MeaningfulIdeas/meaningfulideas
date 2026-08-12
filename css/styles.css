@@ -1327,6 +1327,8 @@ img {
 /* ============================================
    MOBILE READABILITY
    Consistent, high-contrast typography across the site.
+   Maintenance rule: pages must load this shared stylesheet;
+   do not replace these mobile values with page-specific sizes.
    ============================================ */
 @media (max-width: 600px) {
   body {

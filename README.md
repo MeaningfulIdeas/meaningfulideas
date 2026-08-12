@@ -25,6 +25,18 @@ A static website for Meaningful Ideas, featuring Non-Coercive, Collaborative Par
 - **Parallax**: Subtle parallax on the quote section (desktop only)
 - **Reduced motion**: Respects `prefers-reduced-motion` accessibility setting
 
+## Typography contract
+
+The shared `css/styles.css` file is the source of truth for site typography.
+At mobile widths up to 600px, it intentionally uses:
+
+- Headings: `2rem` (32px)
+- Paragraph/body text: `1.5rem` (24px)
+- Paragraph line spacing: `1.2`
+- Near-black text for normal content, with light text preserved on dark CTA and footer areas
+
+New pages must link to the shared stylesheet rather than creating separate mobile typography rules. Future page-specific styles should not override these values without Vivek's approval.
+
 ## Testing
 
 The site uses Playwright for end-to-end testing across desktop (1440×900) and mobile (390×844) viewports.
