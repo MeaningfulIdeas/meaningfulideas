@@ -4,6 +4,21 @@
       "source": "/courses/meaningful-ideas-membership",
       "destination": "/membership/",
       "permanent": true
+    },
+    {
+      "source": "/fp/guiding-without-controlling-free-course",
+      "destination": "https://meaningfulideas.newzenler.com/fp/guiding-without-controlling-free-course",
+      "permanent": true
+    },
+    {
+      "source": "/courses/maximum-change",
+      "destination": "https://meaningfulideas.newzenler.com/courses/maximum-change/",
+      "permanent": true
+    },
+    {
+      "source": "/support",
+      "destination": "https://meaningfulideas.newzenler.com/support",
+      "permanent": true
     }
   ]
 }
