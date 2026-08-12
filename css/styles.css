@@ -1340,22 +1340,22 @@ img {
   body h4,
   body h5,
   body h6 {
-    font-size: 2rem;
-    line-height: 1.4;
+    font-size: 2rem !important;
+    line-height: 1.4 !important;
   }
 
   body p {
-    font-size: 1.5rem;
-    color: #171717;
-    line-height: 1.2;
+    font-size: 1.5rem !important;
+    color: #171717 !important;
+    line-height: 1.2 !important;
   }
 
   body .cta-banner p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 
   body .footer p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 }
 
