@@ -107,7 +107,7 @@ test.describe('Page content verification', () => {
     const html = fs.readFileSync(path.join(basePath, 'affirmations/index.html'), 'utf8');
     expect(html).toContain('<h1>Self-Compassion Affirmations</h1>');
     expect(html).toContain('Your/My feelings are valid');
-    expect(html).toContain('(Okay that one was my personal script!)');
+    expect(html).not.toContain('(Okay that one was my personal script!)');
     expect(html).toContain('I choose to speak to myself with love and kindness');
   });
 
