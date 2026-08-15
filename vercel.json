@@ -19,6 +19,11 @@
       "source": "/support",
       "destination": "https://meaningfulideas.newzenler.com/support",
       "permanent": true
+    },
+    {
+      "source": "/investment",
+      "destination": "https://meaningfulideas.newzenler.com/f/investment",
+      "permanent": true
     }
   ]
 }
