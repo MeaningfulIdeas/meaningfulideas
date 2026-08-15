@@ -506,6 +506,51 @@ img {
 }
 
 /* ============================================
+   SELF-COMPASSION AFFIRMATIONS
+   ============================================ */
+.affirmations-page .section-heading {
+  margin-bottom: 40px;
+}
+
+.affirmations-page .section-heading h1 {
+  margin-bottom: 18px;
+}
+
+.affirmations-list {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.affirmations-list + .affirmations-list {
+  margin-top: 36px;
+}
+
+.affirmations-list li {
+  padding: 18px 24px;
+  border-left: 4px solid var(--sage);
+  background: var(--white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.affirmations-list li + li {
+  margin-top: 14px;
+}
+
+.affirmations-list li.note {
+  color: var(--text-light);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+/* ============================================
    CARDS
    ============================================ */
 .card-grid {

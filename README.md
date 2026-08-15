@@ -11,6 +11,7 @@ A static website for Meaningful Ideas, featuring Non-Coercive, Collaborative Par
 - **Blog** (`blog.html`) — Blog listing with article previews
 - **Blog Articles** (`blog/`) — Individual blog posts
 - **Membership** (`membership.html`) — NCCP Empowerment Group membership page
+- **Self-Compassion Affirmations** (`affirmations/`) — Large-font collection of self-compassion affirmations
 - **Contact** (`contact.html`) — Contact form and social links
 - **Legal** — Terms, Privacy, and Cookie policies
 

@@ -11,6 +11,7 @@ const pages = [
   'maximum-change.html',
   'blog.html',
   'membership.html',
+  'affirmations/index.html',
   'contact.html',
   'terms.html',
   'privacy.html',
@@ -102,8 +103,16 @@ test.describe('Page content verification', () => {
     expect(html).not.toMatch(/ðŸ|â€”|Â©/);
   });
 
+  test('affirmations page preserves the supplied affirmations', async () => {
+    const html = fs.readFileSync(path.join(basePath, 'affirmations/index.html'), 'utf8');
+    expect(html).toContain('<h1>Self-Compassion Affirmations</h1>');
+    expect(html).toContain('Your/My feelings are valid');
+    expect(html).toContain('(Okay that one was my personal script!)');
+    expect(html).toContain('I choose to speak to myself with love and kindness');
+  });
+
   test('clean URL pages exist', () => {
-    for (const page of ['blog', 'courses', 'contact', 'membership', 'privacy', 'terms']) {
+    for (const page of ['blog', 'courses', 'contact', 'membership', 'privacy', 'terms', 'affirmations']) {
       expect(fs.existsSync(path.join(basePath, page, 'index.html'))).toBe(true);
     }
   });
