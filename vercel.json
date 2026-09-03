@@ -314,6 +314,11 @@
                           "source":  "/courses/meaningful-ideas-membership/contents/6a9994cfaef86",
                           "destination":  "https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership/contents/6a9994cfaef86",
                           "permanent":  true
+                      },
+                      {
+                          "source":  "/courses/meaningful-ideas-membership/contents/:lessonId",
+                          "destination":  "https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership/contents/:lessonId",
+                          "permanent":  true
                       }
                   ]
 }
