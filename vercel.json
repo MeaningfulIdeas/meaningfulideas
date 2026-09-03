@@ -316,8 +316,8 @@
                           "permanent":  true
                       },
                       {
-                          "source":  "/courses/meaningful-ideas-membership/contents/:lessonId",
-                          "destination":  "https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership/contents/:lessonId",
+                          "source":  "/courses/meaningful-ideas-membership/contents/:lessonId*",
+                          "destination":  "https://meaningfulideas.newzenler.com/courses/meaningful-ideas-membership/contents/:lessonId*",
                           "permanent":  true
                       }
                   ]
